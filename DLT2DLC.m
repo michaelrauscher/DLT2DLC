@@ -69,7 +69,7 @@ y = y(:,pts);
 y = v.Height-y;
 
 %make the scorer line of the DLC CSV file
-outcell = [{'scorer'}, repmat({'MJR'},1,length(pts)*2)];
+outcell = [{'scorer'}, repmat({scorer},1,length(pts)*2)];
 
 %make and append the bodyparts line of the DLC CSV file
 partstr = {'bodyparts'};
