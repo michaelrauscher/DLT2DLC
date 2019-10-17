@@ -1,3 +1,3 @@
 # DLT2DLC
 
-Converts a DLTdv (http://biomech.web.unc.edu/dltdv/) xypts CSV file into a labeled training dataset for use with Deeplabcut (https://github.com/AlexEMG/DeepLabCut)
+Converts an xypts CSV file from DLTdv (http://biomech.web.unc.edu/dltdv/) into a labeled training dataset for use with DeepLabCut (https://github.com/AlexEMG/DeepLabCut).
