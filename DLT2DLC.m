@@ -57,16 +57,19 @@ end
 %get leading zeros for the saved image filenames to match DLC conventions
 leadingzeros = ['%0' num2str(floor(log10(length(xy)))+1) 'd'];
 
-%find only rows with at least one labeled point
-labeledix = find(~all(isnan(xy(:,1:2:end)),2));
 %break up matrix of xy pts into individual x and y to recombine later
-x = xy(labeledix,1:2:end);
-y = xy(labeledix,2:2:end);
+x = xy(:,1:2:end);
+y = xy(:,2:2:end);
 %reorder acording to specified points
 x = x(:,pts);
 y = y(:,pts);
 %reverse coordinate system of the y data
 y = v.Height-y;
+
+%find only rows with at least one labeled point
+labeledix = find(~all(isnan(x),2));
+x = x(labeledix,:);
+y = y(labeledix,:);
 
 %make the scorer line of the DLC CSV file
 outcell = [{'scorer'}, repmat({scorer},1,length(pts)*2)];
